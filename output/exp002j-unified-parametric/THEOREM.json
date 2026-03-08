@@ -1,0 +1,13 @@
+{
+  "theorem": "For every b in Q\\{-1}, f(x,y)=(y,y^2+c+bx) has a primitive period-3 orbit over Q",
+  "formulas": {
+    "c": "-(29b^2 + 38b + 29)/16",
+    "x0": "-(5b + 7)/4",
+    "x1": "(7b + 5)/4",
+    "x2": "(b - 1)/4"
+  },
+  "degenerate_at": "b = -1 (fixed point)",
+  "proof_method": "Direct SymPy verification: all 3 equations = 0 identically in b",
+  "consequence": "BIRS 2023 Conjecture 4 is FALSE for ALL b in Q",
+  "proved_symbolically": true
+}

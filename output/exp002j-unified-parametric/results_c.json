@@ -1,0 +1,23 @@
+{
+  "minus_proved_odd": true,
+  "plus_proved_odd": true,
+  "minus_universal": true,
+  "numerical": {
+    "0": true,
+    "1/2": false,
+    "1/3": false,
+    "1/5": false,
+    "2/3": false,
+    "3/2": false,
+    "5/2": false,
+    "7/3": true,
+    "-2": true,
+    "-4": true,
+    "2": true,
+    "4": true,
+    "6": true,
+    "-1/2": false,
+    "-3/2": false,
+    "-1/3": true
+  }
+}

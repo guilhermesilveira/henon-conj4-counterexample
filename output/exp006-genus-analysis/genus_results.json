@@ -1,0 +1,29 @@
+{
+  "period3": {
+    "total_deg": 8,
+    "genus_upper": 21,
+    "factored": "(c + x0**2)*(c**3 + 3*c**2*x0**2 + 4*c**2 + 3*c*x0**4 + 4*c*x0**2 - 11*c + x0**6 - 3*x0**2 + 6)"
+  },
+  "period4": {
+    "total_deg": 16,
+    "n_factors": 4,
+    "factor_degrees": [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        8,
+        1
+      ]
+    ]
+  }
+}

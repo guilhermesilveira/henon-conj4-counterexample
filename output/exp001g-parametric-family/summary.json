@@ -1,0 +1,96 @@
+{
+  "family": [
+    {
+      "q": 1,
+      "target": 2,
+      "c": "-3",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 2,
+      "target": 4,
+      "c": "-5/4",
+      "closes": true,
+      "actual_period": 4
+    },
+    {
+      "q": 3,
+      "target": 6,
+      "c": "-7/9",
+      "closes": true,
+      "actual_period": 6
+    },
+    {
+      "q": 4,
+      "target": 8,
+      "c": "-9/16",
+      "closes": true,
+      "actual_period": 8
+    },
+    {
+      "q": 5,
+      "target": 10,
+      "c": "-11/25",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 6,
+      "target": 12,
+      "c": "-13/36",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 7,
+      "target": 14,
+      "c": "-15/49",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 8,
+      "target": 16,
+      "c": "-17/64",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 9,
+      "target": 18,
+      "c": "-19/81",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 10,
+      "target": 20,
+      "c": "-21/100",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 11,
+      "target": 22,
+      "c": "-23/121",
+      "closes": false,
+      "actual_period": null
+    },
+    {
+      "q": 12,
+      "target": 24,
+      "c": "-25/144",
+      "closes": false,
+      "actual_period": null
+    }
+  ],
+  "p6_c": [
+    "-33/16",
+    "-7/9"
+  ],
+  "p8_c": [
+    "-9/16"
+  ],
+  "p10": 0
+}
