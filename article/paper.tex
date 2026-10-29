@@ -1,0 +1,273 @@
+\documentclass{jT}
+% Author preprint: suppress the class's unassigned journal/issue banner.
+\makeatletter
+\AtBeginDocument{\let\@serieslogo\@empty}
+\makeatother
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\raggedbottom
+\hypersetup{pdftitle={Rational Cycles of Periods Three and Four for Quadratic Henon Maps},pdfauthor={Guilherme de Azevedo Silveira}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{corollary}[proposition]{Corollary}
+\begin{document}
+\title[Rational cycles for quadratic H\'enon maps]{Rational Cycles of Periods Three and Four for Quadratic H\'enon Maps}
+\author{Guilherme de Azevedo Silveira}
+\address{Alura\newline Rua Vergueiro, 3185, 8th floor\newline S\~ao Paulo, SP 04101-300, Brazil}
+\email{guilherme.silveira@alura.com.br}
+\subjclass[2020]{37P35, 37P05, 14G05}
+\keywords{H\'enon maps, rational periodic points, periods three and four, rational curves, arithmetic dynamics}
+\maketitle
+\begin{resume}
+Nous étendons la paramétrisation rationnelle classique des 3-cycles des polynômes quadratiques à $f_{c,b}(x,y)=(y,y^2+c+bx)$. Pour chaque $b\in\Q$ fixé, nous classifions tous les 3-cycles rationnels marqués et obtenons une infinité de $c\in\Q$ distincts, en traitant $b=-1$ séparément; $b=0$ est un endomorphisme. Cela réfute l'assertion d'exception finie pour les automorphismes de H\'enon énoncée comme conjecture 4 dans la section de Patrick Ingram de \emph{H\'enon maps: a list of open problems} (2024). Pour la période 4 à $b=1$, nous complétons les équations connues d'Endler et Gallas par les normalisations marquées, les relèvements rationnels et les fibres exceptionnelles. Le lieu marqué et l'adhérence de sa projection plane ont chacun trois composantes géométriquement intègres de normalisation projective $\PP^1$. Nous identifions la rotation de la famille conique au quotient quartique cyclique de Hoshi et caractérisons les marquages rationnels. Ces familles donnent aussi une infinité de $c$ distincts.
+\end{resume}
+\begin{abstr}
+We extend the classical rational parametrization of quadratic polynomial 3-cycles to $f_{c,b}(x,y)=(y,y^2+c+bx)$. For each fixed $b\in\Q$, we classify all rational marked 3-cycles and obtain infinitely many distinct $c\in\Q$, treating $b=-1$ separately; $b=0$ is an endomorphism. This disproves the finite-exception assertion for H\'enon automorphisms stated as Conjecture 4 in Patrick Ingram's section of \emph{H\'enon maps: a list of open problems} (2024). For period 4 at $b=1$, we complete the known equations of Endler and Gallas with marked normalizations, rational lifts and exceptional fibers. The marked locus and its planar closure each have three geometrically integral components with projective normalization $\PP^1$. We identify rotation of the conic family with Hoshi's cyclic quartic quotient and give necessary and sufficient conditions for rational markings. These families also yield infinitely many distinct $c$.
+\end{abstr}
+\bigskip
+\section{Introduction}\label{sec:intro}
+Which rational parameters admit a prescribed period, and which rational points of a parameter curve lift to rational cycles? We study these questions for
+\begin{equation}\label{eq:map}
+f_{c,b}(x,y)=(y,y^2+c+bx),\qquad b,c\in\Q.
+\end{equation}
+For $b\ne0$, the inverse sends $(u,v)$ to $((v-u^2-c)/b,u)$; for $b=0$ the map is not injective. Thus it is an automorphism exactly when $b\ne0$.
+
+For period 3, our starting point is the classical polynomial parametrization of Walde--Russo \cite{walde-russo}, as stated and attributed by Poonen \cite[Theorem 1(3), p.~5]{poonen}. We use this unconditional result, independently of the conjectural classification of all preperiodic graphs. Section~\ref{sec:all-b} proves an invertible transport of marked words to every $b\ne-1$, treats $b=-1$ separately, and proves infinitude of $c$ for each fixed $b$. The transport adjusts $c$ using the word sum; it is not a global conjugation of planar maps. In particular, Corollary~\ref{prop:family} disproves the finite-exception formulation of Conjecture 4 in Patrick Ingram's section of \emph{H\'enon maps: a list of open problems} \cite[\S11]{problems}: primitive 3-cycles exist for infinitely many nonzero coefficients $b$, contradicting a finite exceptional set chosen independently of $c$.
+
+For period 4 we fix $b=1$. Endler--Gallas \cite{endler-gallas} give the orbit equations; Section~\ref{sec:period4} supplies their marked and rational interpretation, with necessary and sufficient lifting conditions and exceptional points. Section~\ref{sec:quotients} identifies rotation on the conic normalization with the classical cyclic quartic action of Hoshi \cite[\S3, p.~7]{hoshi} and determines when a rational quotient point has a rational marking. These are arithmetic completions of known formulas; we make no claim of new projection equations or of global priority.
+
+For $n\ge1$, a marked word $(x_0,\ldots,x_{n-1})$ represents consecutive states $P_i=(x_i,x_{i+1})$, indexed modulo $n$, satisfying
+\begin{equation}\label{eq:cycle}
+x_{i+2}=x_{i+1}^2+c+bx_i.
+\end{equation}
+The word includes its value of $c$ and its initial state. Minimum period is the least positive return time; it divides any return time by division with remainder. A marking, an unmarked orbit and a value of $c$ are different objects.
+
+The period-3 plane curve at $b=1$ specializes Ross's sextic \cite[\S3.1, p.~54]{ross}. Its marked reconstruction and exceptional points, alternative proofs, real multipliers, finite examples and a denominator criterion are retained in the accompanying supplement. They are not needed for the two classifications in the body.
+
+
+\section{Infinitely many parameters for each fixed rational coefficient}\label{sec:all-b}
+For $b\in\Q$, define
+\[
+\mathcal S_b=\{c\in\Q:\text{$f_{c,b}$ has a point in $\Q^2$ of minimum period 3}\}.
+\]
+\begin{proposition}[Period 3 for each fixed $b$]\label{prop:all-b}
+For every $b\in\Q$, the set $\mathcal S_b$ is infinite. More explicitly, for every finite $A\subset\Q$ there exist $c\in\Q\setminus A$ and $P\in\Q^2$ of minimum period 3 for $f_{c,b}$. The maps are automorphisms when $b\ne0$; $b=0$ is included as an endomorphism.
+
+For $b\ne-1$, all rational marked cycles are parametrized bijectively by $r\in\Q\setminus\{0,1\}$ as follows:
+\begin{equation}\label{eq:all-b}
+\begin{aligned}
+q_r&=r^2-r+1,& d&=-\frac{(b+1)q_r}{r(r-1)},\\
+x&=\frac{b-(b+1)/r-rd}{2},& y&=x+d,\qquad z=x+rd,\\
+c&=z-y^2-bx.
+\end{aligned}
+\end{equation}
+Here the word $(x,y,z)$ includes its value of $c$; the parametrization is not a bijection in $c$ or in unmarked orbits. At $b=-1$, all marked cycles are rotations of
+\begin{equation}\label{eq:minus-one}
+(x,y,z)=(a,a,-a-1),\quad c=-1-a^2,\quad a\in\Q\setminus\{-1/2\},
+\end{equation}
+and $\mathcal S_{-1}=\{-1-a^2:a\in\Q\}$.
+\end{proposition}
+\begin{proof}
+First let $b\ne-1$. At $b=0$, Poonen's formulas with $\tau=r-1$ are exactly \eqref{eq:all-b}. Denote the resulting word by $(p_0,p_1,p_2)$, its parameter by $c_0$, and its sum by $s_0$. For any cyclic index put
+\begin{equation}\label{eq:classical-transport}
+u_i=(b+1)p_i+b/2,\qquad
+C=(b+1)^2c_0-b(b+1)s_0+b/2-3b^2/4.
+\end{equation}
+Expansion gives the identity
+\[
+u_{i+2}-u_{i+1}^2-C-bu_i
+=(b+1)^2(p_{i+2}-p_{i+1}^2-c_0).
+\]
+The three linear terms have common coefficient $-b(b+1)$ and cancel against $b(b+1)s_0$. Conversely, for any rational primitive word $u$, set $p_i=(u_i-b/2)/(b+1)$ and recover $c_0$ from \eqref{eq:classical-transport}. The same identity proves polynomial closure. Nonfixity is preserved because $b+1\ne0$, so the correspondence is bijective on marked primitive words with their parameters.
+
+Poonen's formulas cover the polynomial cycles. To check that they cover every marking with a unique parameter, note that $r=(p_2-p_0)/(p_1-p_0)$ and that rotating the displayed word replaces $r$ by $1/(1-r)$, then by $(r-1)/r$. These are admissible rational parameters and give the two other markings. The affine transport preserves the ratio. Substitution in \eqref{eq:classical-transport} yields \eqref{eq:all-b}, proving its coverage and inverse. No division by $b$ is used.
+
+For infinitude at this fixed $b$, write $(x,y,z)=(X/L,Y/L,Z/L)$ with $L=2r(r-1)$. The numerators have degree at most 3 and $Y$ has leading coefficient $b+1$. Thus $c=N/L^2$, where $N=ZL-Y^2-bXL$ has degree 6 and leading coefficient $-(b+1)^2$. For each $c_0\in\Q$, $N-c_0L^2$ has the same nonzero leading coefficient, hence at most six rational roots. For finite $A$, at most $6|A|$ parameters map into $A$; one of the $6|A|+1$ integers $2,\ldots,6|A|+2$ gives $c\notin A$.
+
+At $b=-1$, if the three scalars were distinct, putting $d=y-x$ and $r=(z-x)/d$ in the differences of the closure equations would give
+\[
+(r-1)(2x+(r+1)d)=-r-b,\qquad
+r(2x+rd-b)=-(b+1).
+\]
+The determinant in $(2x,d)$ is $-r(r-1)\ne0$; solving gives $d=-(b+1)(r^2-r+1)/(r(r-1))=0$, a contradiction. After rotation put $x=y=a$, $z=e$. Closure gives $c=e-a^2+a$ and $(e-a)(e+a+1)=0$. Excluding fixity leaves \eqref{eq:minus-one}, primitive exactly when $a\ne-1/2$. This exclusion does not remove $c=-5/4$, since $a=1/2$ gives $(1/2,1/2,-3/2)$ at that same parameter. Finally $a=n\ge0$ gives the strictly decreasing sequence $c_n=-1-n^2$, proving infinitude in this stratum.
+\end{proof}
+
+\begin{corollary}[An explicit section and the finite-exception conjecture]\label{prop:family}
+For every $b\in\Q\setminus\{-1\}$, a rational primitive 3-cycle is
+\begin{equation}\label{eq:family}
+c_b=-\frac{29b^2+38b+29}{16},\qquad
+(x_0,x_1,x_2)=\left(-\frac{5b+7}{4},\frac{7b+5}{4},\frac{b-1}{4}\right).
+\end{equation}
+Consequently the finite-exception assertion in \cite[\S11, Conjecture 4]{problems} is false, also when restricted to automorphisms.
+\end{corollary}
+\begin{proof}
+Transport the classical word $(-7/4,5/4,-1/4)$ at $c_0=-29/16$, or set $r=1/2$ in \eqref{eq:all-b}. In the source convention $\delta=-b$, Conjecture 4 would require
+\begin{equation}\label{eq:c4}
+\begin{gathered}
+\exists B\subset\Q\text{ finite}\quad\forall b\in\Q\setminus B\quad
+\forall c\in\Q\quad\forall P\in\Q^2:\\
+P\text{ periodic}\ \Longrightarrow\ f_{c,b}^2(P)=P.
+\end{gathered}
+\end{equation}
+Choose $b\ne0,-1$ outside $B$ and use \eqref{eq:family}. Its minimum period 3 contradicts the implication. The exceptional set must be independent of $c$; neither $b=0$ alone nor examples at a single coefficient would suffice.
+\end{proof}
+At $b=-1$ the displayed section collapses to a fixed point, but the separate classification supplies primitive cycles, including at $c=-5/4$. The contradiction above is an implication of the classical construction and the proved word transport, not a claim to the first published refutation. Infinitely many $c$ for each $b$ does not mean every $c$; for example $0\notin\mathcal S_{-1}$. The supplement gives the direct difference derivation and a second infinitude proof by transport from $b=1$ and escape, independent of the six-parameter fiber bound.
+
+\section{Marked period 4 at \texorpdfstring{$b=1$}{b=1}}\label{sec:period4}
+In this section $f(x,y)=(y,y^2+c+x)$, and the geometric statements are over a field $k$ of characteristic zero. Rational lifting always means over $\Q$. We give a marked and rational completion of the period-4 orbit equations in \cite[eqs.~(2)--(8)]{endler-gallas}, including the normalizations, inverse lifts and exceptional points. Write a marked word as $(x,y,z,w)$, whose four consecutive states start at $(x,y)$.
+\begin{proposition}[Three components and rational lifting]\label{prop:period4}
+The locus of marked minimum-period-4 points has exactly three geometrically integral components defined over $\Q$. Each component, and each component of the closure of its projection to $(x,c)$, has projective normalization $\PP^1_k$ and geometric genus zero.
+
+All rational marked words are given by the following families:
+\begin{equation}\label{eq:p4-lines}
+\begin{aligned}
+L_\varepsilon:\quad &(x,y,z,w)=(\varepsilon-t,-\varepsilon-\varepsilon t,
+ \varepsilon+t,-\varepsilon+\varepsilon t),\\
+&c=-1-t^2,\qquad \varepsilon\in\{1,-1\},\quad t\in\Q^*;
+\end{aligned}
+\end{equation}
+and, for $r\in\Q\setminus\{0,1,-1\}$,
+\begin{equation}\label{eq:p4-conic}
+\begin{aligned}
+\mathcal C:\quad&S=r-r^{-1},\quad U=r+r^{-1},\\
+&x=S/2-U/S,\quad z=S/2+U/S,\\
+&y=-2/S-U/2,\quad w=-2/S+U/2,\\
+&c=-S^2/4-U^2/S^2
+=-\frac{r^8+14r^4+1}{4r^2(r^2-1)^2}.
+\end{aligned}
+\end{equation}
+The inverses on the respective marked components are $t=(z-x)/2$ and $r=(w-y+x+z)/2$.
+\end{proposition}
+\begin{proof}
+The four equations of return are
+\[
+\begin{aligned}
+e_0&=z-y^2-c-x=0,& e_1&=w-z^2-c-y=0,\\
+e_2&=x-w^2-c-z=0,& e_3&=y-x^2-c-w=0.
+\end{aligned}
+\]
+Subtracting opposite equations gives $2(w-y)=(z-x)(z+x)$ and $2(z-x)=-(w-y)(w+y)$. Thus $z=x$ is equivalent to $w=y$ on the return locus, and specifies exactly the points of period dividing 2. Since a minimum return divides 4, minimum 4 is precisely the open $z-x\ne0$.
+
+Use the invertible linear change $S=x+z$, $T=y+w$, $A=z-x$, $B=w-y$. The four equations become
+\[
+2A+BT=0,\quad 2B-AS=0,\quad S^2+A^2+4c=0,\quad T^2+B^2+4c=0.
+\]
+On $A\ne0$ these imply $ST=-4$ and $B=AS/2$. Eliminating $T,B,c$ gives the coordinate ring
+\begin{equation}\label{eq:p4-ring}
+k[S,A,1/(SA)]\big/\big((4-S^2)(S^2A^2-4S^2-16)\big).
+\end{equation}
+The three factors $S-2$, $S+2$ and $S^2A^2-4S^2-16$ define the stated components. On $S=2\varepsilon$, put $A=2t$ to get \eqref{eq:p4-lines} with ring $k[t,1/t]$. On the last component put $U=SA/2$, obtaining
+\[
+k[S,U,1/(SU)]/(U^2-S^2-4).
+\]
+The projective conic $U^2-S^2-4V^2=0$ is smooth (its gradient has no projective zero), hence geometrically integral. The three factors are distinct primes in the localized factorial ring, so their product is radical and there are no additional components or nilpotents. The conic is parametrized by
+\[
+[R:Q]\longmapsto[U:S:V]=[R^2+Q^2:R^2-Q^2:RQ],
+\]
+with no common zero and inverse $r=(U+S)/2$ in the affine chart. This yields \eqref{eq:p4-conic}. These substitutions are reversible in the displayed rings, proving closure, minimum, coverage and the inverses without inferring rational lifting from elimination. Over $\Q$, $U^2=S^2+4$ ensures $U\ne0$; only $r=0,\pm1$ must be excluded. Over an algebraic closure one must additionally remove $r=\pm i$, where $U=0$ and the word is fixed.
+
+The component function fields are $k(t)$, $k(t)$ and $k(r)$. Their smooth projective models are therefore $\PP^1_k$ \cite[Theorem 2.6, tag 0BY1]{stacks}. Equivalently, their birational plane models are smooth lines and a smooth conic, all of genus zero \cite[Lemma 9.3, tag 0BYD]{stacks}. For the planar projections, birationality and extension to the normalization are proved below. The union is reducible: genus zero is asserted for each normalized component, not as an integral-curve genus for the union.
+\end{proof}
+
+\subsection{The planar image and its exclusions}\label{sec:p4-plane}
+Put
+\[
+E_\varepsilon=c+x^2-2\varepsilon x+2,\qquad
+H=(x^2+c)^2+2c-4,\qquad F_4=H^2+4x^2(x^2+2c).
+\]
+These projection equations specialize the orbit polynomials of Endler--Gallas \cite[eqs.~(2)--(8)]{endler-gallas}. Their map is $h_{a,B}(u,v)=(a-u^2+Bv,u)$, so $h_{a,B}\circ T=T\circ f_{c,b}$ for $T(x,y)=(-y,-x)$, $a=-c$ and $B=b$. At $B=1$, their monic quartic $P_{a,\sigma}(u)$ for the four orbit entries is indexed by their sum $\sigma$, subject to $\sigma(\sigma^2-4a+12)=0$. On $\sigma=0$, it is $u^4-2au^2+(a-2)^2$, which becomes $E_+E_-$ under $a=-c$, $u=-x$. On $\sigma^2=4a-12$, the product of the two conjugate quartics becomes $F_4$. Thus the parabolas and octic are known equations; the issue here is their marked and rational interpretation. These specializations use the consistent equations (2)--(8): the quadratic factors printed in their equation (10) require constant $2-a$, rather than $a-2$, to agree with their quartic.
+
+The closure of the primitive planar image is $V(E_+E_-F_4)$: two parabolas and an octic, of total degree 12. Its rational primitive image is exactly
+\[
+V(E_+E_-F_4)(\Q)\setminus\{(1,-1),(-1,-1)\}.
+\]
+Indeed on $E_\varepsilon=0$, $t=\varepsilon-x$ gives \eqref{eq:p4-lines}; $t=0$ yields the excluded period-2 point, which lies on neither other component. On $F_4=0$ with $x\ne0$, set
+\begin{equation}\label{eq:p4-lift}
+z=H/(2x),\qquad S=x+z,\qquad U=-(c+x^2).
+\end{equation}
+The equation $F_4=0$ gives $z^2=-2c-x^2$ and $U^2-S^2=4$. If $S=0$, then $z=-x$ forces $c=-x^2$ and $U=0$, contradicting $U^2-S^2=4$. Thus \eqref{eq:p4-conic} reconstructs $y,w$. The identity $U^2-S^2=4$ gives $c=-S^2/4-U^2/S^2$ and $x=S/2-U/S$, so all four return equations follow from the component construction. Over $\Q$, $U\ne0$; geometrically $U=0$ gives only $x^2=-1,c=1$, the fixed degenerations.
+
+At $x=0$, $F_4=(c^2+2c-4)^2$, with no rational solution. Over another field its two possible values of $c$ require a further square root $z^2=-2c$ for lifting, with $S=z$, $U=-c$. Over the algebraic closure these give two lifts per planar point. This explains why a rational point of an elimination equation need not in general lift rationally. Conversely the component formulas satisfy their indicated planar factors identically; each projection is nonconstant and birational by these inverses. The smooth conic and the lines therefore give exactly the three integral planar closures stated above.
+
+For completeness, on $L_\varepsilon$ the parameter $t=0$ has minimum 2 and $t=\infty$ is a pole of order 2 of $c$. On $\mathcal C$, $r=0,\infty,\pm1$ are double poles of $c$ and simple poles of the four coordinates. At each pole, multiplying $[x:y:z:w:c:1]$, or $[x:c:1]$, by a local uniformizer squared gives a nonzero $c$ coordinate and regular remaining coordinates. Away from the poles the final coordinate is 1. Thus the maps extend without base points to $\PP^1$. They are finite, since nonconstant morphisms of projective integral curves are finite \cite[Lemma 2.4, tag 0CCL]{stacks}, and birational; their normal source is the normalization. The union has six boundary preimages on its normalization, all mapping to the respective common point at infinity. The two nonprimitive parameters $r=\pm i$ instead map to affine fixed words at $c=1$.
+
+There is no rational marked intersection between these components: $L_+$ and $L_-$ are disjoint affinely, and each meets $\mathcal C$ only at $t^2=2$, $c=-3$. Geometrically these four points are transverse crossings; the differentials of $S-2\varepsilon$ and $S^2A^2-4S^2-16$ are independent since $2S^2A\ne0$. The projection is not globally injective: $(x,c)=(0,-2)$ has words $(0,-2,2,0)$ and $(0,0,-2,2)$, distinct markings of one orbit.
+
+\begin{proposition}[Rational parameters and infinitude at period 4]\label{prop:p4-infinite}
+The set of $c\in\Q$ admitting rational minimum period 4 at $b=1$ is
+\[
+\{-1-t^2:t\in\Q^*\}\ \cup\
+\left\{-\frac{r^8+14r^4+1}{4r^2(r^2-1)^2}:r\in\Q\setminus\{0,\pm1\}\right\}.
+\]
+It is infinite; each finite subset of $\Q$ omits one of its elements. There are no rational minimum-period-4 points at $c=-3$ or $c=0$.
+\end{proposition}
+\begin{proof}
+Necessity and sufficiency follow from Proposition~\ref{prop:period4}. For every integer $n\ge1$, the word $(1-n,-1-n,1+n,-1+n)$ at $c_n=-1-n^2$ closes and has $z-x=2n\ne0$. For $m>n$, $c_n-c_m=(m-n)(m+n)>0$; hence the first $|A|+1$ such values cannot all belong to a finite set $A$. This proof does not require the classification or any genus theorem. Finally $L_\varepsilon$ gives $c<-1$, with $c=-3$ requiring $t^2=2$. On $\mathcal C$,
+\[
+c+3=-\frac{(S^2-4)^2}{4S^2}\le0.
+\]
+Equality would require $S^2=4$ and $U^2=8$, impossible over $\Q$. Thus this family has $c<-3$, proving both exclusions.
+\end{proof}
+The two parabolas are primitive components, and the octic also has geometric genus zero. Rotation of the initial state acts on these components, so three marked components do not mean three unmarked orbits. Section~\ref{sec:quotients} describes the quotients of their normalizations. Auxiliary counts for fixed maps are in the supplement. All period-4 statements here have $b=1$ fixed.
+
+\section{Rotation and rational markings on the normalized quotients}\label{sec:quotients}
+Work over the characteristic-zero field $k$ of Section~\ref{sec:period4}. The following quotients concern only the normalizations of the components, not the full singular quotient scheme of their union.
+
+Let $\rho$ rotate a word by one place. On $L_\varepsilon$ the rotation sends $(\varepsilon,t)$ to $(-\varepsilon,\varepsilon t)$, so $\rho^2$ sends $t$ to $-t$. An invariant rational function on $L_+\cup L_-$ is determined by its restriction to $L_+$, which must be even. With $a=t^2$, writing $k(t)=k(a)\oplus t k(a)$ and comparing the two coefficients under $t\mapsto-t$ shows that the invariant algebra in $k(t)\times k(t)$ is the field $k(a)$. Conversely each function of $a$ extends invariantly across the two components. The normalized quotient is $\PP^1_k$; an affine $a\in\Q$ lifts to a rational primitive marking exactly when $a\in(\Q^*)^2$, and then $c=-1-a$. A rational quotient point alone is insufficient, for example $a=-1$.
+
+On $\mathcal C$, the inverse $r=(w-y+x+z)/2$ applied to the rotated word gives $r'=(x-z+y+w)/2=-U/S-2/S$. Since $U=r+r^{-1}$ and $S=r-r^{-1}$, this yields
+\[
+\rho(r)=\frac{r+1}{1-r},\qquad \rho^2(r)=-1/r,\qquad
+v=S-4/S=\frac{r^4-6r^2+1}{r(r^2-1)}.
+\]
+This is the classical cyclic quartic action and invariant field in Hoshi \cite[\S3, p.~7]{hoshi}: his generator $(r-1)/(r+1)$ is $\rho^{-1}$ and generates the same group. In particular, its invariant field $k(v)$ and the quartic below are known. Adding the four coordinates gives $v=x+y+z+w=S-4/S$, and substituting in \eqref{eq:p4-conic} gives $c=-3-v^2/4$. Thus the normalized quotient is $\PP^1_k$, by the cited invariant-field result.
+
+For a given $v\in\Q$, a rational marking exists if and only if there are $S\in\Q^*$ and $U\in\Q$ with
+\[
+S^2-vS-4=0,\qquad U^2=S^2+4.
+\]
+Necessity follows from $S=x+z$, $U=w-y$; sufficiency follows by substitution in \eqref{eq:p4-conic}, since $U\ne0$ over $\Q$. Equivalently there must be a rational root of
+\[
+r^4-vr^3-6r^2+vr+1=0.
+\]
+Indeed $r=(S+U)/2$ recovers $S=r-1/r$ and conversely; such a rational root cannot be $0,\pm1$. The value $v=0$ does not lift rationally: it forces $S^2=4$, $U^2=8$. The boundary maps to $v=\infty$; the nonprimitive geometric parameters $r=\pm i$ map to $v^2+16=0$, as follows from $v^2+16=(S^2+4)^2/S^2$. This describes quotients of normalizations with explicit arithmetic lifting conditions, not all rational points of a singular orbit space.
+
+\section{Scope and supplementary material}\label{sec:discussion}
+The two classifications separate rational markings from planar or quotient points. Period 3 occurs for infinitely many parameters at each rational $b$, including the exceptional coefficient $-1$. Already the explicit section in Corollary~\ref{prop:family} disproves the finite-exception formulation of Conjecture 4 in Ingram's section of \cite{problems}, within the automorphism domain $b\ne0$. Period 4 is classified here only at $b=1$; its rational lifting conditions give infinitely many parameters despite the finite number of primitive points of any fixed map. Three marked components are not three unmarked orbits.
+
+Completeness of the period set $\{1,2,3,4,6,8\}$ at $b=1$ remains Conjecture 3 of \cite[\S11]{problems}; its attainment is already recorded by Ingram \cite[p.~4]{ingram}. No existence proof here assumes that conjecture. The constructions of Kim, Krieger, Postolache and Szeto \cite[Theorems A--B]{kim}, with increasing odd degree, address the long-cycle questions in that source without resolving the fixed quadratic problem. For degree 2 the threshold in Question 46 is 5; the families proved here have periods 3 and 4.
+
+The accompanying \emph{Supplement to Rational Cycles of Periods Three and Four for Quadratic H\'enon Maps} contains alternative proofs, the $b=1$ period-3 normalization and exceptions, the real saddle calculation for \eqref{eq:family} only on $\R\setminus\{-1,0,1\}$, finite examples, denominators and auxiliary period-4 counts. A reproduction package containing selected exact and formal certificates, their coverage and the supplement is provided with this manuscript. Source and reproducibility files are available at \url{https://github.com/guilhermesilveira/henon-conj4-counterexample}. The accompanying Lean certificates verify selected supporting statements; the complete classification and infinitude arguments have not been fully formalized in Lean. No new claim about other coefficients at period 4, higher periods or nonlinear stability is made.
+
+
+\paragraph{Use of AI tools.}
+AI tools, including OpenAI Codex, assisted the mathematical exploration,
+proof drafting and revision underlying Sections~2--4 and the supplement,
+the literature discovery and comparison in Sections~1 and~5, and the
+development and checking of the accompanying exact-algebra and selected
+formal certificates. They also assisted editorial revision, the French
+abstracts and typesetting. This assistance extended beyond spelling and
+grammar correction. The certificates have the limited coverage stated in
+the reproduction notes; they do not formalize the entire manuscript or
+establish priority. The author is responsible for the mathematical claims,
+references and final submitted text; no AI tool is an author.
+
+\begin{thebibliography}{9}
+\bibitem{endler-gallas} A. Endler and J. A. C. Gallas, \emph{Arithmetical signatures of the dynamics of the H\'enon map}. Phys. Rev. E 65 (2002), 036231. \href{https://doi.org/10.1103/PhysRevE.65.036231}{doi:10.1103/PhysRevE.65.036231}. Author-hosted published-layout PDF, equations (2)--(8).
+\bibitem{hoshi} A. Hoshi, \emph{On the simplest quartic fields and related Thue equations}. \href{https://arxiv.org/abs/1004.1960v2}{arXiv:1004.1960v2}, 18 April 2010, \S3, p.~7. Published in R. Feng, W.-s. Lee and Y. Sato (eds.), \emph{Computer Mathematics}, Springer (2014), 67--85. \href{https://doi.org/10.1007/978-3-662-43799-5_7}{doi:10.1007/978-3-662-43799-5\_7}.
+\bibitem{ingram} P. Ingram, \emph{Canonical heights for H\'enon maps}. \href{https://arxiv.org/abs/1111.3609v1}{arXiv:1111.3609v1}, submitted 15 November 2011; preserved PDF internally dated 21 August 2017. Associated publication: Proc. London Math. Soc. (3) 108 (2014), 780--808, doi:10.1112/plms/pdt026.
+\bibitem{problems} Julia X\'enelkis de H\'enon, \emph{H\'enon maps: a list of open problems}. Edited by C. Favre, T. Firsova, L. Palmisano, J. Raissy and G. Vigny. Arnold Math. J. 10 (2024), 585--620. \href{https://doi.org/10.1007/s40598-024-00252-x}{doi:10.1007/s40598-024-00252-x}. \S11 by P. Ingram; displayed numbering of the published journal HTML, consulted 13 September 2026.
+\bibitem{kim} H. Kim, H. Krieger, M.-I. Postolache and V. Szeto, \emph{H\'enon maps with many rational periodic points}. \href{https://arxiv.org/abs/2412.01668v2}{arXiv:2412.01668v2}, 8 July 2025, Theorems A--B.
+\bibitem{poonen} B. Poonen, \emph{The Complete Classification of Rational Preperiodic Points of Quadratic Polynomials over $\Q$: A Refined Conjecture}. \href{https://arxiv.org/abs/math/9512217v1}{arXiv:math/9512217v1}, 11 December 1995, Theorem 1(3), p.~5. Published as \emph{The classification of rational preperiodic points of quadratic polynomials over $\Q$: a refined conjecture}, Math. Z. 228 (1998), 11--29. \href{https://doi.org/10.1007/PL00004405}{doi:10.1007/PL00004405}.
+\bibitem{ross} D. J. Ross, \emph{The dynamics and the periodic orbits of the H\'enon map}. MSc thesis, University of Guelph, 1998; National Library of Canada scan, ISBN 0-612-33267-5. \S3.1, printed p.~54 (PDF p.~63). \url{https://nlc-bnc.ca/obj/s4/f2/dsk2/tape15/PQDD_0024/MQ33267.pdf}.
+\bibitem{stacks} The Stacks Project Authors, \emph{Algebraic Curves}, revision \texttt{ed88ff78}, 14 July 2026. Tags 0CCL, 0BY1 and 0BYD. \url{https://stacks.math.columbia.edu/download/curves.pdf}.
+\bibitem{walde-russo} R. Walde and P. Russo, \emph{Rational Periodic Points of the Quadratic Function $Q_c(x)=x^2+c$}. Amer. Math. Monthly 101 (1994), 318--331. \href{https://doi.org/10.1080/00029890.1994.11996950}{doi:10.1080/00029890.1994.11996950}. Attribution via the proof in \cite{poonen}; original full text not consulted.
+\end{thebibliography}
+\end{document}

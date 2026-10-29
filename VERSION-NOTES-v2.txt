@@ -1,0 +1,21 @@
+SCIENTIFIC SCOPE AND CORRECTION NOTE
+28 October 2026
+
+Author: Guilherme de Azevedo Silveira, Alura.
+Reproduction repository: https://github.com/guilhermesilveira/henon-conj4-counterexample .
+
+Title: Rational Cycles of Periods Three and Four for Quadratic Hénon Maps.
+Revises: Universal Period-3 Orbits for Generalized Hénon Maps over Q: A Counterexample to Conjecture 4 of Berger et al. (Zenodo v1, 1 March 2026, doi:10.5281/zenodo.18827738).
+
+CORRECTION: The old genus/finiteness argument and its finiteness conclusion are withdrawn. The relevant period-three curve has genus-zero normalization, and there are infinitely many rational c admitting a rational primitive 3-cycle for each fixed rational b. Do not rely on v1 for the withdrawn assertion. The explicit period-three family that refutes the printed finite-exception conjecture is retained.
+
+Scope of the manuscript:
+- Full marked period-three parametrization and inverse word transport, with classical Poonen/Walde-Russo attribution.
+- Separate classification at b=-1, including c=-5/4, and infinitude of distinct c at every rational b. This is not a statement for every c. Automorphisms require b!=0.
+- Complete marked period-four components at b=1, projective normalizations, rational lifts and exceptional points. Classical Endler-Gallas equations and Hoshi's invariant-field input are credited.
+- Normalized rotation quotients with necessary and sufficient arithmetic lifting conditions; marked points are not counted as distinct unmarked orbits.
+- Correct real saddle scope for the original explicit section: b outside {-1,0,1}; no nonlinear-stability conclusion from neutral multipliers.
+- Explicit limits on the selected algebraic and Lean certificates; the entire article is not formalized.
+- Explicit AI-use disclosure and precise limits on claims of novelty and formal verification.
+
+This is an unrefereed preprint. The correction above concerns the earlier preprint identified by its DOI; the present mathematical claims and certificate limits are stated explicitly.

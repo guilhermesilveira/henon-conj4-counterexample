@@ -1,0 +1,9 @@
+{
+  "url": "https://jtnb.math.u-bordeaux.fr/jT.cls",
+  "retrieved": "2026-10-28",
+  "header_date": "2015/06/22",
+  "sha256": "45415ced6d5811062e563467921bee180929f13b1fc91a3f623074eb6a217198",
+  "class_unmodified_from_official_download": true,
+  "replaces_september_bundled_header_date": "2001/03/05",
+  "public_source_archive_redistributes_class": false
+}

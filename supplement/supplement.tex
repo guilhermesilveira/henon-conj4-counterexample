@@ -1,0 +1,278 @@
+\documentclass{jT}
+% Author preprint: suppress the class's unassigned journal/issue banner.
+\makeatletter
+\AtBeginDocument{\let\@serieslogo\@empty}
+\makeatother
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\raggedbottom
+\hypersetup{pdftitle={Supplement to Rational Cycles of Periods Three and Four for Quadratic Henon Maps},pdfauthor={Guilherme de Azevedo Silveira}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{corollary}[proposition]{Corollary}
+\usepackage{xr}
+\externaldocument[M-]{../article/paper}[../article/paper.pdf]
+% Keep printed article references portable when the PDFs are saved separately.
+\makeatletter
+\renewcommand*{\hyper@linkfile}[3]{#1}
+\makeatother
+\renewcommand{\thesection}{S\arabic{section}}
+\begin{document}
+\title[Rational cycles for quadratic H\'enon maps]{Supplement to Rational Cycles of Periods Three and Four for Quadratic H\'enon Maps}
+\author{Guilherme de Azevedo Silveira}
+\address{Alura\newline Rua Vergueiro, 3185, 8th floor\newline S\~ao Paulo, SP 04101-300, Brazil}
+\email{guilherme.silveira@alura.com.br}
+\subjclass[2020]{37P35, 37P05, 14G05}
+\keywords{H\'enon maps, rational periodic points, periods three and four, rational curves, arithmetic dynamics}
+\maketitle
+\begin{resume}
+Ce supplément présente des démonstrations alternatives et des résultats auxiliaires pour les classifications de cycles rationnels de périodes 3 et 4 de l'article associé.
+\end{resume}
+\begin{abstr}
+This supplement gives alternative proofs and supporting results for the companion article's classifications of rational cycles of periods three and four.
+\end{abstr}
+\bigskip
+References explicitly prefixed ``Article'' refer to the companion article; references S1--S6 are internal. The two infinitude arguments use finite fibers and ordered escape, respectively. The escape argument is independent of the six-parameter fiber bound. Selected formal proofs cover specific statements and do not formalize the entire article. Reproduction instructions and coverage accompany this supplement.
+
+\section{Real multipliers and finite examples}\label{sup:examples}
+The family is Article equation~\eqref{M-eq:family}; all stability statements below refer only to that section.
+For use over $\R$, here is the direct verification of the section, independent of the arithmetic parametrization theorem.
+
+Write $A=-5b-7$, $B=7b+5$, $C=b-1$ and $H=-29b^2-38b-29$. Expansion gives the polynomial identities
+\[
+B^2+H+4bA=4C,\quad C^2+H+4bB=4A,\quad A^2+H+4bC=4B.
+\]
+Dividing by 16 proves all three transitions. Moreover $x_1-x_0=3(b+1)\ne0$, so period 1 is excluded; primality of 3 proves minimality. At $b=-1$, the family itself has $c=-5/4$ and collapses to the fixed point $(-1/2,-1/2)$. Instead, at $c=-1$ the states $(0,-1),(-1,0),(0,0)$ form a 3-cycle by direct substitution and are distinct.
+
+\subsection{Multipliers and the exceptional parameters}\label{sec:saddle}
+The polynomial identities and nonfixity argument above also hold over $\R$, as does the inverse formula for $b\ne0$. We use ``hyperbolic saddle'' to mean one multiplier has modulus strictly less than 1 and the other strictly greater than 1. At the starting state $(x_0,x_1)$ the chain-rule order is
+\[
+M_b=J_b(x_0)J_b(x_2)J_b(x_1),\qquad J_b(v)=\begin{pmatrix}0&1\\b&2v\end{pmatrix}.
+\]
+\begin{proposition}[Real saddle classification]\label{prop:saddle}
+For every $b\in\R\setminus\{-1,0,1\}$, the cycle in Article equation~\eqref{M-eq:family} is a hyperbolic saddle. At $b=1$ it is not hyperbolic. At $b=0$ it is a cycle of an endomorphism with multipliers $0,35/8$. At $b=-1$ the family has minimum period 1.
+\end{proposition}
+\begin{proof}
+Multiplication yields
+\[
+M_b=\begin{pmatrix}
+b(b-1)/2 &(b+1)(7b-5)/4\\
+-b(b+1)(5b-7)/4&-(b-1)(35b^2+66b+35)/8
+\end{pmatrix}.
+\]
+Thus $T_b=\operatorname{tr}M_b=-(b-1)(35b^2+62b+35)/8$, $\det M_b=-b^3$, and $p_b(\lambda)=\lambda^2-T_b\lambda-b^3$ satisfies
+\[
+p_b(1)=\frac{27(b-1)(b+1)^2}{8},\qquad
+p_b(-1)=-\frac{(b-1)(43b^2+70b+43)}8.
+\]
+The last quadratic is $43(b+35/43)^2+624/43>0$. For $b\ne\pm1$, the two endpoint values have opposite signs. The intermediate value theorem gives a root in $(-1,1)$; since the polynomial is monic and negative at one endpoint, it has another root outside $[-1,1]$. This proves the strict inequalities, not merely reality of the roots. The determinant is nonzero if $b\ne0$.
+
+At $b=1$, direct substitution gives $M_1=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$, with multipliers $-1,1$. At $b=0$, $p_0(\lambda)=\lambda(\lambda-35/8)$. At $b=-1$, the derivative of the minimum return (one iterate) is $\left(\begin{smallmatrix}0&1\\-1&-1\end{smallmatrix}\right)$, with roots $(-1\pm i\sqrt3)/2$ on the unit circle; $M_{-1}=I$ is the derivative of three iterates of that fixed point. No nonlinear stability follows from these neutral multipliers. This classification does not address the separate cycle at $b=-1,c=-1$.
+\end{proof}
+
+\subsection{Examples of rational periods}\label{sec:examples}
+The following words give rational cycles. Each entry can be verified by substitution in Article equation~\eqref{M-eq:cycle}; excluding the proper divisors of its stated length proves minimum period. For period 4 the word has $x_2\ne x_0$; for period 6 it has $x_1,x_2,x_3\ne x_0$; for period 8 it has $x_1,x_2,x_4\ne x_0$. For the prime lengths 2, 3 and 7, nonfixity suffices. These are existence statements, without an exclusion of other periods. Ingram already records attainment of all six listed periods at $b=1$ \cite[p.~4]{ingram}. No priority is asserted for the representatives in this table. The period-8 orbit is Ingram's orbit, with a different starting point, and contains his point $(1/4,-3/4)$ at $c=-9/16$ \cite[p.~4]{ingram}.
+\begin{center}\small
+\begin{tabular}{rrrl}
+\toprule $b$ & $n$ & $c$ & Scalar word\\\midrule
+1&1&$-1/4$&$(-1/2)$\\
+1&2&$-4$&$(-2,2)$\\
+1&3&$-6$&$(-3,3,0)$\\
+1&4&$-5/4$&$(-3/2,3/2,-1/2,1/2)$\\
+1&6&$-7/9$&$(-1/3,2/3,-2/3,1/3,-4/3,4/3)$\\
+1&8&$-9/16$&$(-5/4,5/4,-1/4,3/4,-1/4,1/4,-3/4,1/4)$\\
+$-1$&7&$-9/16$&$(-3/4,-1/4,1/4,-1/4,-3/4,1/4,1/4)$\\
+\bottomrule
+\end{tabular}\end{center}
+For instance, multiplying the period-7 coordinates by 4 gives
+\[A=(-3,-1,1,-1,-3,1,1).\] The seven integer identities are $4A_{i+2}=A_{i+1}^2-9-4A_i$. Their right sides are $(4,-4,-12,4,4,-12,-4)$, proving closure. Nonfixity and primality of 7 prove minimum period. All seven state pairs are distinct and the odd numerators give reduced denominator 4. The period-7 and period-8 examples at different $b$ do not alone prove that the full rational period sets differ.
+
+\section{The period-three curve at \texorpdfstring{$b=1$}{b=1}}\label{sec:genus}
+We recall a plane curve that records the first scalar $x$ and the parameter $c$ of a marked rational 3-cycle. Its relation to the dynamics, including the exceptional points of the projection, is essential to the parametrization.
+
+Write the word as $(x,y,z)$ and put $s=x^2+c$. The cycle equations at $b=1$ are
+\[
+z=y^2+c+x,\qquad x=z^2+c+y,\qquad y=x^2+c+z.
+\]
+The last equation gives $y-z=s$. Substituting $y=z+s$ and $c=s-x^2$ in the other two yields
+\[
+z^2+z+2s-x^2-x=0,\qquad
+z^2+(2s-1)z+s^2+s-x^2+x=0.
+\]
+Their difference is $2(s-1)z+s^2-s+2x=0$. If $s=0$, then $y=z$ and subtraction of the cycle equations forces $x=y$, so the word is fixed. If $s=1$, the difference forces $x=0$ and the first quadratic is $z^2+z+2=0$, with discriminant $-7$; no rational cycle occurs. Thus every rational primitive word has $s\ne0,1$, and
+\[
+z=-s/2-x/(s-1),\qquad y=s/2-x/(s-1).
+\]
+Substitution in the first quadratic gives $sG(x,s)/(4(s-1)^2)$, where
+\begin{equation}\label{eq:G}
+G(x,s)=(s-1)^2(s+6)-4x^2(s-2).
+\end{equation}
+Consequently $G=0$ is necessary, and on $s\ne0,1$ the reconstruction proves sufficiency for the three return equations. The invertible affine change $s=x^2+c$ gives the plane equation
+\begin{equation}\label{eq:F}
+F(x,c)=x^6+3x^4c+3x^2c^2+4x^2c-3x^2+c^3+4c^2-11c+6=0.
+\end{equation}
+This sextic is exactly the specialization of Ross's primitive-period-3 polynomial \cite[\S3.1, p.~54]{ross}. His convention is $H_{a,B}(u,v)=(a-u^2-Bv,u)$: the change $T(x,y)=(-y,-x)$ gives $H_{a,B}\circ T=T\circ f_{c,b}$ for $a=-c$, $B=-b$. Setting $B=-1$ and $u=-x$ in that polynomial gives \eqref{eq:F}. The equation is cited from Ross; the reconstruction below is retained because it specifies the marked lifting and its exceptions. The following parametrization also proves primitivity and identifies the rational image completely.
+
+\begin{proposition}[Rational parametrization and infinitude]\label{prop:genus}
+The curve \eqref{eq:F} is geometrically integral and its projective normalization is $\PP^1_\Q$, of geometric genus zero. There are infinitely many $c\in\Q$ for which $f_{c,1}$ has a rational point of minimum period 3.
+\end{proposition}
+\begin{proof}
+Over $\overline{\Q}(s)$ the function $(s-1)^2(s+6)/(4(s-2))$ is not a square, since its order at $s=-6$ is 1. The quadratic equation for $x$ is irreducible over that field; its coefficients are relatively prime in $\overline{\Q}[s]$. Gauss's lemma proves geometric integrality. On $s\ne1$ put $t=x/(s-1)$ and $D=4t^2-1$. Equation \eqref{eq:G} gives
+\begin{equation}\label{eq:param}
+s=\frac{8t^2+6}{D},\qquad x=\frac{t(4t^2+7)}D,\qquad
+c=-\frac{16t^6+24t^4+33t^2+6}{D^2}.
+\end{equation}
+These formulas and $t=x/(s-1)$ are inverse on dense opens (exclude $D(4t^2+7)=0$ over $\overline{\Q}$). The function field is $\Q(t)$; the smooth projective normalization is therefore $\PP^1_\Q$.
+
+For rational $t\ne\pm1/2$, let $y=s/2-t$ and $z=-s/2-t$. Substitution in \eqref{eq:param} gives
+\[
+z=y^2+c+x,\qquad x=z^2+c+y,\qquad y=x^2+c+z.
+\]
+The polynomial identities can be checked by clearing $D^2$. Further,
+\[
+y-x=-\frac{4t^2+3}{2t+1}\ne0\quad(t\in\Q\setminus\{\pm1/2\}).
+\]
+Thus these states have minimum period 3. For any fixed $c_0$, the equation $c(t)=c_0$ becomes a nonzero degree-6 polynomial, with leading coefficient $-16$, after multiplication by $D^2$. Each fiber has at most six rational parameters. There are infinitely many admissible rational $t$, so infinitely many distinct $c(t)$. This is a finite-fiber argument, not a numerical search.
+\end{proof}
+
+The parametrization concerns $b=1$ and minimum period 3. Section~\ref{app:lifting} identifies the points omitted by the affine chart and extends the map to the projective normalization. Section~\ref{sec:transport} uses this family in a second proof of infinitude for every fixed rational $b$.
+
+\subsection{The normalization and its exceptional points}\label{app:lifting}
+The affine point $(x,c)=(0,1)$ is exceptional. Indeed $s=1$ in \eqref{eq:G} forces $x=0$; $s=2$ gives $G=8$, so is impossible. For rational $t$, $4t^2+7\ne0$. Hence \eqref{eq:param} maps $\Q\setminus\{\pm1/2\}$ bijectively onto the rational points of \eqref{eq:F} other than $(0,1)$. The correspondence with dynamics keeps the initial state $(x,y)$ marked; it is not a bijection with unmarked orbits or with values of $c$.
+
+At $s=1$, the two quadratics in Section~\ref{sec:genus} force $x=0$ and $z^2+z+2=0$. Its discriminant is $-7$, so the rational singular point has no rational lift. At $s\ne1$, fixed degenerations satisfy $y=x=z$, whence $s=0$ and $t^2=-3/4$; none is rational. Every rational minimum-period-3 point therefore falls in the open already described.
+
+The projective extension of the parametrization, useful for checking poles, is
+\[
+[T:U]\longmapsto[TU(4T^2+7U^2)(4T^2-U^2):N_h:U^2(4T^2-U^2)^2],
+\]
+where $N_h=-16T^6-24T^4U^2-33T^2U^4-6U^6$. These forms have no common zero: outside $U(4T^2-U^2)=0$ the last coordinate is nonzero; at $U=0$ the middle coordinate is $-16T^6$; at $4T^2=U^2$ it is $-16U^6$. This nonconstant morphism from the projective line to the integral projective curve is finite. Since it is birational with normal source, it is the normalization. The parameters $\infty,\pm1/2$ map to $[0:1:0]$ and are not affine cycles. The points above $(0,1)$ satisfy $4t^2+7=0$ and are nonrational.
+
+\section{Direct difference derivation for period 3}\label{sup:direct}
+This is the alternative derivation of Article Proposition~\ref{M-prop:all-b}, including its fiber proof. The symbols in Article equations~\eqref{M-eq:all-b} and~Article equation~\eqref{M-eq:minus-one} are used below.
+
+The three closure equations are
+\[
+z=y^2+c+bx,\qquad x=z^2+c+by,\qquad y=x^2+c+bz.
+\]
+If $x=y$, subtracting the first and third gives $(b+1)(z-x)=0$. For $b\ne-1$, any equality between two scalars therefore forces fixity, by rotation. A primitive word has $d=y-x\ne0$ and $r=(z-x)/d\notin\{0,1\}$. Equating the three expressions for $c$ and dividing by $d$ gives
+\[
+(r-1)(2x+(r+1)d)=-r-b,\qquad r(2x+rd-b)=-(b+1).
+\]
+The determinant for the unknowns $(2x,d)$ is $-r(r-1)$. Solving gives Article equation~\eqref{M-eq:all-b}. Conversely these equations imply all three expressions for $c$ agree, so the formulas close the cycle. Since $4q_r=(2r-1)^2+3>0$ and $b+1\ne0$, we have $d\ne0$ and hence minimum period 3. The ratio recovers $r$ uniquely. No division by $b$ is used.
+
+For infinitude with this $b$ fixed, write
+\[
+\begin{aligned}
+L&=2r(r-1),\\
+X&=br^3-br+b+r^3-r^2+1,\\
+Y&=br^3-2br^2+br-b+r^3-3r^2+2r-1,\\
+Z&=-(br^3-2br^2+3br-b+r^3-r^2+2r-1).
+\end{aligned}
+\]
+Then $(x,y,z)=(X/L,Y/L,Z/L)$ and $c=N/L^2$, where $N=ZL-Y^2-bXL$. The polynomial $Y$ has leading coefficient $b+1$ in degree 3; the other terms in $N$ have degree at most 5. Consequently $N-c_0L^2$ has degree 6 with leading coefficient $-(b+1)^2\ne0$, for every $c_0\in\Q$. Each fiber has at most six rational parameters. For finite $A$, at most $6|A|$ parameters map into $A$; one of the $6|A|+1$ integers $2,\ldots,6|A|+2$ thus yields $c\notin A$.
+
+At $b=-1$, three distinct scalars would permit the same difference calculation and force $d=0$, a contradiction. After rotation put $x=y=a$, $z=e$. Closure reduces to $c=e-a^2+a$ and $(e-a)(e+a+1)=0$. The first factor gives fixity; the second gives Article equation~\eqref{M-eq:minus-one}. Its three states are distinct exactly when $a\ne-1/2$. Removing that one $a$ does not remove its value $c=-5/4$, since $a=1/2$ gives the primitive word $(1/2,1/2,-3/2)$ at the same $c$. Finally $a=n$, for integers $n\ge0$, gives $c_n=-1-n^2$ and $c_n-c_m=(m-n)(m+n)>0$ whenever $m>n$. These distinct values prove the assertion for every finite $A$ also in this stratum.
+
+\section{A second infinitude argument by transport and escape}\label{sec:transport}
+A different proof uses the marked lifting at $b=1$ from Section~\ref{sec:genus} and Section~\ref{app:lifting}, instead of the degree-six fiber bound. Let $(v_0,v_1,v_2)$ be its word, let $q=c(t)$ in \eqref{eq:param}, and put $\sigma=v_0+v_1+v_2$. For $b\ne-1$ set
+\begin{equation}\label{eq:transport}
+\alpha=\frac{b+1}{2},\quad \beta=\frac{b-1}{4},\quad
+u_i=\alpha v_i+\beta,\quad C=\alpha^2q-2\alpha\beta\sigma-5\beta^2.
+\end{equation}
+For each cyclic index $i$, expansion gives the identity
+\[
+u_{i+2}-u_{i+1}^2-C-bu_i
+=\alpha^2(v_{i+2}-v_{i+1}^2-q-v_i).
+\]
+Indeed all three linear coefficients in the difference are $-2\alpha\beta$ and cancel the $2\alpha\beta\sigma$ term; the constant cancels because $b-1=4\beta$. Since $\alpha\ne0$, the inverse $v_i=(u_i-\beta)/\alpha$ and $q=(C+2\alpha\beta\sigma+5\beta^2)/\alpha^2$ is rational. Thus closure and nonfixity are preserved in both directions. This transports words together with their parameters. It is not a conjugation of the planar maps: $C$ depends on the word through $\sigma$. It supplies no stability conclusion for these new families. The two rational charts are related by $r=(2t+1)/(2t-1)$, with inverse $t=(r+1)/(2(r-1))$.
+
+For real $t\ge1$, $D=4t^2-1\ge3$ and direct simplification of \eqref{eq:param} gives
+\[
+q=-t^2-\frac{32t^4+32t^2+6}{D^2}<-t^2,\qquad
+\sigma=-t+\frac{8t}{D},\qquad |\sigma|<4t.
+\]
+Therefore $C<-\alpha^2t^2+8|\alpha\beta|t-5\beta^2$. If $w=|\alpha|t\ge16|\beta|=16v$, then
+\[
+2(-w^2+8vw-5v^2)+w^2=-w(w-16v)-10v^2\le0,
+\]
+so $C<-\alpha^2t^2/2$. For any real bound $M$, choose an integer $t$ large enough to meet this threshold and $\alpha^2t^2/2>-M$. This gives a rational primitive cycle with $C<M$. Taking $M=\min A$ for nonempty finite $A$ proves escape from $A$; the empty case is immediate. The argument includes $b=0$ ($\alpha=1/2$, $\beta=-1/4$). At $b=-1$ the separate sequence in the proof above applies, or one can use the at-most-two fibers of $a\mapsto-1-a^2$.
+
+\section{Denominator criterion and limits of finite computation}\label{app:denom}
+Fix an integer $q\ge2$, $b=1$, $c=-(2q+1)/q^2$, and seeds $x_0=-(q+1)/q$, $x_1=(q+1)/q$. Define $x_{n+2}=x_{n+1}^2+c+x_n$ for $n\ge0$, and $a_n=qx_n$. The scaled recurrence is
+\[
+a_{n+1}=(a_n^2-1)/q+a_{n-1}-2\qquad(n\ge1).
+\]
+All $x_n$, $n\ge0$, have positive reduced denominator exactly $q$ if and only if all $a_n$ are integers and $a_n^2\equiv1\pmod q$ for every $n\ge0$. In the forward direction, the recurrence gives the congruence for $n\ge1$ and the seed gives it for $n=0$. Conversely the congruences imply $\gcd(a_n,q)=1$, so no denominator cancels. The equivalence does not assert that either side holds for an arbitrary $q$; it does not prove periodicity, closure or minimum period.
+
+For $q=2,3,4$, the words of Section~\ref{sec:examples} close with periods $4,6,8$ (up to a cyclic change of the seed for period 6). At $q=5$, the sequence starts $a_0=-6,a_1=6,a_2=-1,a_3=4,a_4=0,a_5=9/5$, so $x_4=0$ already fails reduced denominator 5 and $x_5=9/25$. This defeats that denominator pattern at $q=5$. It is not a proof of absence of period 10 for arbitrary seeds, nor a proof that the construction fails for every $q\ge5$. The density of residues satisfying a congruence is not a probability law for this deterministic orbit.
+
+\section{Alternative quotient verification and auxiliary period-four statements}\label{app:p4-aux}
+These results concern the normalizations of the components in Article Section~\ref{M-sec:period4}. They do not classify the full singular quotient scheme of their union.
+
+\subsection{Rotation quotients and rational lifting}
+Let $\rho$ rotate a word by one place. On $L_\varepsilon$ the rotation sends $(\varepsilon,t)$ to $(-\varepsilon,\varepsilon t)$, so $\rho^2$ sends $t$ to $-t$. An invariant rational function on $L_+\cup L_-$ is determined by its restriction to $L_+$, which must be even. With $a=t^2$, writing $k(t)=k(a)\oplus t k(a)$ and comparing the two coefficients under $t\mapsto-t$ shows that the invariant algebra in $k(t)\times k(t)$ is the field $k(a)$. Conversely each function of $a$ extends invariantly across the two components. The normalized quotient is $\PP^1_k$; an affine $a\in\Q$ lifts to a rational primitive marking exactly when $a\in(\Q^*)^2$, and then $c=-1-a$. A rational quotient point alone is insufficient, for example $a=-1$.
+
+On $\mathcal C$, rotation is
+\[
+\rho(r)=\frac{r+1}{1-r},\qquad \rho^2(r)=-1/r,\qquad
+v=S-4/S=\frac{r^4-6r^2+1}{r(r^2-1)}.
+\]
+This is the classical cyclic quartic action and invariant field in Hoshi \cite[\S3, p.~7]{hoshi}: his generator $(r-1)/(r+1)$ is $\rho^{-1}$ and generates the same group. In particular, its invariant field $k(v)$ and the quartic below are known. Here $v=x+y+z+w$ is the sum of the H\'enon word and $c=-3-v^2/4$. For completeness, we give a direct verification using two quadratic fixed spaces. Put $\sigma=\rho^2$. Since $r^2-Sr-1=0$ and $S^2+4$ is not a square in $k(S)$ (it has simple zeros over $\bar k$), $k(r)=k(S)\oplus r k(S)$. The equality $\sigma(r)=S-r$ forces the coefficient of $r$ in a fixed element to vanish, because $(2r-S)b(S)=0$ implies $b=0$. Hence $k(r)^\sigma=k(S)$. The residual involution sends $S$ to $-4/S=v-S$. Now $S^2-vS-4=0$ and $v^2+16$ is not a square in $k(v)$ for the same simple-zero reason. Comparing coefficients in $k(S)=k(v)\oplus S k(v)$ proves $k(r)^{\langle\rho\rangle}=k(v)$. Thus the normalized quotient is again $\PP^1_k$.
+
+For a given $v\in\Q$, a rational marking exists if and only if there are $S\in\Q^*$ and $U\in\Q$ with
+\[
+S^2-vS-4=0,\qquad U^2=S^2+4.
+\]
+Necessity follows from $S=x+z$, $U=w-y$; sufficiency follows by substitution in Article equation~\eqref{M-eq:p4-conic}, since $U\ne0$ over $\Q$. Equivalently there must be a rational root of
+\[
+r^4-vr^3-6r^2+vr+1=0.
+\]
+Indeed $r=(S+U)/2$ recovers $S=r-1/r$ and conversely; such a rational root cannot be $0,\pm1$. The value $v=0$ does not lift rationally: it forces $S^2=4$, $U^2=8$. The boundary maps to $v=\infty$; the nonprimitive geometric parameters $r=\pm i$ map to $v^2+16=0$, as follows from $v^2+16=(S^2+4)^2/S^2$. This describes quotients of normalizations with explicit arithmetic lifting conditions, not all rational points of a singular orbit space.
+
+\subsection{Infinitude from the conic component alone}
+The function $c_{\mathcal C}(r)$ in Article equation~\eqref{M-eq:p4-conic} has at most eight parameters in any fixed $c$ fiber: its cleared fiber polynomial has degree 8 with leading coefficient 1, independently of $c$. Since $\Q\setminus\{0,\pm1\}$ is infinite, this component alone supplies infinitely many distinct $c$.
+
+An argument avoiding fiber counts is also available. For real $r\ge2$, put $D_4=4r^2(r^2-1)^2$ and $E=2r^6+13r^4+1$. Then
+\[
+c_{\mathcal C}(r)=-r^2/4-E/D_4,\qquad
+3D_4-E=r^4(10r^2-37)+12r^2-1>0.
+\]
+Since $D_4,E>0$, this gives $-r^2/4-3<c_{\mathcal C}(r)<-r^2/4$. Choose $r_n=4n$, $n\ge1$. For $m>n$, $(r_m^2-r_n^2)/4=4(m-n)(m+n)\ge12>3$, so
+\[
+c_{\mathcal C}(r_m)<-r_m^2/4<-r_n^2/4-3<c_{\mathcal C}(r_n).
+\]
+The rational primitive lifts are already supplied by Article equation~\eqref{M-eq:p4-conic}; the sequence proves infinitude with those hypotheses, without a genus or fiber-degree argument.
+
+\subsection{Uniform count for each fixed map}
+For every $c_0\in\bar k$ there are at most 12 distinct geometric points of minimum period 4, and therefore at most three orbits. One proof counts at most $2+2+8$ parameters in the three normalized families; intersections can only reduce the number of points. The degrees remain bounds after every specialization of $c$.
+
+A second proof handles possible nonreduced fibers directly. The full return algebra is
+\[
+B=\bar k[x,y,z,w]/(x^2-y+w+c_0,\ y^2-z+x+c_0,
+ z^2-w+y+c_0,\ w^2-x+z+c_0).
+\]
+Write its generators $g_i=X_i^2-L_i$, where each $L_i$ is linear or constant. For every pair,
+\[
+X_j^2g_i-X_i^2g_j=L_jg_i-L_ig_j.
+\]
+In a graded monomial order the terms on the right have degree at most 3, below the least common multiple $X_i^2X_j^2$ of degree 4. The leading monomials are pairwise coprime, so the Buchberger criterion \cite[Theorem 2.1.8]{winkler} gives a Gr\"obner basis. All generators are monic for every $c_0$. The sixteen square-free monomials are therefore a basis of $B$.
+
+The lower-period quotient, obtained by setting $z=x$ and $w=y$, is $\bar k[x,y]/(x^2+c_0,y^2+c_0)$, of dimension 4, even at $c_0=0$. Decompose the finite algebra $B$ into its local Artinian factors. The quotient is supported on the lower-period factors, whose total length is consequently at least 4. The remaining factors, where $z-x$ is invertible, have total length at most $16-4=12$. Each distinct primitive point contributes at least one to that length. This proves the bound also in degenerate fibers; subtracting only the number of lower-period points would not suffice.
+
+At $c=-3$ there are exactly four geometric primitive points, at the intersections $L_\varepsilon\cap\mathcal C$: $S^2=4$, $U^2=8$. At $c=0$, the two lines give four distinct points, and the conic fiber polynomial is $p(r)=r^8+14r^4+1$. It has eight simple roots: $p'(r)=8r^3(r^4+7)$ has no common root with $p$, since $p(0)=1$ and substituting $r^4=-7$ gives $-48$. None is $0,\pm1,\pm i$, and the components intersect only at $c=-3$. Thus the bound 12 is attained geometrically. Neither of these fibers has a rational primitive point, as proved in Article Proposition~\ref{M-prop:p4-infinite}. A bound for each fixed map does not imply finiteness of parameters $c$.
+
+\begin{thebibliography}{10}
+\bibitem{hoshi} A. Hoshi, \emph{On the simplest quartic fields and related Thue equations}. \href{https://arxiv.org/abs/1004.1960v2}{arXiv:1004.1960v2}, 18 April 2010, \S3, p.~7. Published in R. Feng, W.-s. Lee and Y. Sato (eds.), \emph{Computer Mathematics}, Springer (2014), 67--85. \href{https://doi.org/10.1007/978-3-662-43799-5_7}{doi:10.1007/978-3-662-43799-5\_7}.
+\bibitem{ingram} P. Ingram, \emph{Canonical heights for H\'enon maps}. \href{https://arxiv.org/abs/1111.3609v1}{arXiv:1111.3609v1}, submitted 15 November 2011; preserved PDF internally dated 21 August 2017. Associated publication: Proc. London Math. Soc. (3) 108 (2014), 780--808, doi:10.1112/plms/pdt026.
+\bibitem{ross} D. J. Ross, \emph{The dynamics and the periodic orbits of the H\'enon map}. MSc thesis, University of Guelph, 1998; National Library of Canada scan, ISBN 0-612-33267-5. \S3.1, printed p.~54 (PDF p.~63). \url{https://nlc-bnc.ca/obj/s4/f2/dsk2/tape15/PQDD_0024/MQ33267.pdf}.
+\bibitem{winkler} F. Winkler, \emph{Commutative Algebra and Algebraic Geometry}, Chapter 2, ``Elimination theory'', pp.~9--34. RISC, Johannes Kepler Universit\"at Linz, summer course 2018, Theorem 2.1.8. \url{https://www.risc.jku.at/education/courses/ss2018/caag/02-elimination.pdf}.
+\end{thebibliography}
+\end{document}

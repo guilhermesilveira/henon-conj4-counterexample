@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-28",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "checks": [
+    {
+      "name": "period3-exact",
+      "script": "reproducibility/period3/verify_exact.py",
+      "exit_code": 0,
+      "sha256": "538b9bac2ed1dabd11139096ec0261858d02ee49889aa7810ffdb2d402c0ab6a"
+    },
+    {
+      "name": "period3-bridges",
+      "script": "reproducibility/period3/check_bridges.py",
+      "exit_code": 0,
+      "sha256": "a7da025238b5ba5166d613271e44c6b1aebbb4259cefc6d91b4ffc88c3446b8f"
+    },
+    {
+      "name": "period4-exact",
+      "script": "reproducibility/period4/verify.py",
+      "exit_code": 0,
+      "sha256": "078804351cb858478ad3aa9187fb0219b68965f370a8b80ec27aa8f9578294fd"
+    },
+    {
+      "name": "period4-supplement",
+      "script": "reproducibility/period4/check_supplement.py",
+      "exit_code": 0,
+      "sha256": "15b34277bd860e7918e0889d3a476f9a81c948797a16d0f7610fed3625de0315"
+    }
+  ],
+  "all_four_selected_checks_passed": true,
+  "scope": "Selected exact-algebra certificates only. Full classifications, infinitude arguments and novelty are outside this certificate coverage. Lean certificate scope is documented in reproducibility/COVERAGE.md.",
+  "article_pages": 10,
+  "supplement_pages": 10,
+  "mathematical_environments_preserved_from_september": true,
+  "supplement_statement_and_proof_environments_preserved_from_september": true,
+  "supplement_body_matches_baseline_after_exact_authorized_editorial_substitutions": true,
+  "author_affiliation": "Alura"
+}

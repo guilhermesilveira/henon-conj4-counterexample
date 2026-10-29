@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.out
+build-pass*.txt
+__pycache__/
+*.pyc
+.lake/
+.DS_Store
+article/jT.cls
+supplement/jT.cls
+reproducibility/period3/queries/*.smt2
+reproducibility/period4/supplement-results.json
